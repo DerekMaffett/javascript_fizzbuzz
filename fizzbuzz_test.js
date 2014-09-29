@@ -1,38 +1,52 @@
-function test1() {
-  var should = (fizzbuzz(3) === 'fizz');
+require('./node_modules/colors/colors');
+var fbMod = require('./fizzbuzz');
+
+function divisibleByThreeReturnsFizzTest() {
   var msg = 'Returns fizz for inputs divisible by 3';
+  var should = (fbMod.fizzbuzz(3) === 'fizz');
   test_output(should, msg);
 };
 
-function test2() {
-  var should = (fizzbuzz(5) === 'buzz');
+function divisibleByFiveReturnsBuzzTest() {
   var msg = 'Returns buzz for inputs divisible by 5';
+  var should = (fbMod.fizzbuzz(5) === 'buzz');
   test_output(should, msg);
 };
 
-function test3() {
-  var should = (fizzbuzz(15) === 'fizzbuzz');
+function divisibleByBothReturnsFizzbuzzTest() {
   var msg = 'Returns fizzbuzz for numbers divisible by 3 and 5';
+  var should = (fbMod.fizzbuzz(15) === 'fizzbuzz');
   test_output(should, msg);
 };
 
-function test4() {
-  var should = (fizzbuzz(4) === 4);
+function divisibleByNeitherReturnsInputTest() {
   var msg = 'Returns input if not divisible by 3 or 5';
+  var should = (fbMod.fizzbuzz(4) === 4);
   test_output(should, msg);
-}
+};
 
-function exampleTest() {
-  var should = true
-  var msg = 'This example should be true'
-  test_output(should, msg)
-}
+function canReturnRangeOfFizzbuzzValuesTest() {
+  var msg = 'Returns an array of fizzbuzz values from 1 to 5';
+  var should = (fbMod.fizzbuzzLoop(1, 5) === [1, 2, 'fizz', 4, 'buzz']);
+  test_output(should, msg);
+};
+
+
 
 function test_output(should, msg) {
   if (should == true) {
-    console.log('PASS: ' + msg);
+    var test_report = 'PASS: '.green + msg;
   } else {
-    console.log('FAIL: ' + msg);
+    var test_report = 'FAIL: '.red + msg;
   };
+  console.log(test_report)
 };
 
+divisibleByThreeReturnsFizzTest();
+divisibleByFiveReturnsBuzzTest();
+divisibleByBothReturnsFizzbuzzTest();
+divisibleByNeitherReturnsInputTest();
+canReturnRangeOfFizzbuzzValuesTest();
+
+var _ = require("...lodash");
+_.isEqual(array1,array2);
