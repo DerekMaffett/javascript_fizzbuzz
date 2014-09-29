@@ -5,7 +5,7 @@ function fizzbuzzLoop(start, end) {
 }
 
 function fizzbuzz(num) {
-  if !(fizz(num) || buzz(num)) {
+  if (!fizz(num) && !buzz(num)) {
     return console.log(num)
   } else {
     result = ''
@@ -26,3 +26,5 @@ function fizz(num) {
 function buzz(num) {
   return num % 5 == 0
 }
+
+
