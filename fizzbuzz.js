@@ -3,7 +3,6 @@ function fizzbuzzLoop(start, end) {
   for (i = start; i <= end; i++) {
     range.push(fizzbuzz(i));
   };
-  console.log(range);
   return range;
 };
 

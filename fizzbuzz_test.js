@@ -1,4 +1,5 @@
 require('./node_modules/colors/colors');
+var _ = require('./node_modules/lodash/lodash');
 var fbMod = require('./fizzbuzz');
 
 function divisibleByThreeReturnsFizzTest() {
@@ -27,11 +28,16 @@ function divisibleByNeitherReturnsInputTest() {
 
 function canReturnRangeOfFizzbuzzValuesTest() {
   var msg = 'Returns an array of fizzbuzz values from 1 to 5';
-  var should = (fbMod.fizzbuzzLoop(1, 5) === [1, 2, 'fizz', 4, 'buzz']);
+  var should = (_.isEqual(fbMod.fizzbuzzLoop(1, 5), [1, 2, 'fizz', 4, 'buzz']));
   test_output(should, msg);
 };
 
-
+function readableLoopDisplay(start, end) {
+  var array = fbMod.fizzbuzzLoop(start, end);
+  for (i = 1; i <= 1000; i++) {
+    console.log(i + ': ' + array[i - 1]);
+  };
+}
 
 function test_output(should, msg) {
   if (should == true) {
@@ -42,11 +48,13 @@ function test_output(should, msg) {
   console.log(test_report)
 };
 
+
+
+console.log('Displaying Fizzbuzz from 1 to 1000:\n');
+readableLoopDisplay(1, 1000);
+console.log();
 divisibleByThreeReturnsFizzTest();
 divisibleByFiveReturnsBuzzTest();
 divisibleByBothReturnsFizzbuzzTest();
 divisibleByNeitherReturnsInputTest();
 canReturnRangeOfFizzbuzzValuesTest();
-
-var _ = require("...lodash");
-_.isEqual(array1,array2);
