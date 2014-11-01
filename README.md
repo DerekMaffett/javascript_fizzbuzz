@@ -15,5 +15,6 @@ expected outcome of the challenge can be obtained by running
 
 # Contributors
 
-I received a lot of help from Brook and the Javascript instructor (I forget
-her name at the moment)
+Thanks to [Brook Riggio](https://github.com/brookr) and
+[Mel Quark](https://github.com/mel-quark) for helping with getting the custom
+test framework up and running.
